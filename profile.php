@@ -22,7 +22,6 @@
 <li><input type="text" name="fname"></li>
 <li><label for="lname">Lastname:</label></li>
 <li><input type="text" name="lname"></li>
-<li><input type="text" name="country" > </li>
 <li><label for="tel" >Phone:</label> </li>
 <li><input type="tel" name="tel">  </li>
 <li><label for="email"> Email:</label> </li>
