@@ -1,12 +1,13 @@
 <?php include 'include/head.php'; ?>
  <title>Web Application</title>
-
+ <script src="js/jquery-3.6.0.js"></script>
+<script src="js/main.js"></script>
 </head>
 
 <body>
-<header><a href="home.php" id="textlogo">WEB APPLICATION</a> </header>
+<header><a href="index.php" id="textlogo">WEB APPLICATION</a> </header>
 
-<?php $_GET['currentPage'] = 'home';
+<?php $_GET['currentPage'] = 'index';
  include 'include/menu.php'?>
 
     <section class="hero">
