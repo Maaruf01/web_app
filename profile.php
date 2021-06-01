@@ -43,22 +43,22 @@ include 'include/head.php';
         <div id="profile-pic">
         <img src="#" alt="Profile Pic" ></div>
         <div id="profile-info">
-        <a href="#">Edit Profile</a>
+        <a  id="edit-profile">Edit Profile</a>
         <form action="#" method="post" id="profile-form" >
             <ul>
                 <li><label for="fname">Firstname:</label></li>
-                <li><input type="text" name="fname"  value="<?php echo escape($user['firstname']); ?>"></li>
+                <li><input type="text" class="userInfo" name="fname" value="<?php echo escape($user['firstname']); ?>"></li> <br/>
                 <li><label for="lname">Lastname:</label></li>
-                <li><input type="text" name="lname" value="<?php echo escape($user['lastname']); ?>"></li>
+                <li><input type="text" class="userInfo" name="lname" value="<?php echo escape($user['lastname']); ?>"></li> <br/>
                 <li><label for="tel" >Phone:</label> </li>
-                <li><input type="tel" name="tel" value="<?php echo escape($user['phone']); ?>">  </li>
+                <li><input type="tel" class="userInfo" name="tel" value="<?php echo escape($user['phone']); ?>">  </li>  <br/>
                 <li><label for="email"> Email:</label> </li>
-                <li><input type="email" name="email" value="<?php echo escape($user['email']); ?>"> </li>
+                <li><input type="email" class="userInfo" name="email" value="<?php echo escape($user['email']); ?>"> </li> <br/>
                 <li><label for="username" >Username:</label> </li>
-                <li><input type="text" name="username" value="<?php echo escape($user['username']); ?>"> </li>
+                <li><input type="text" class="userInfo" name="username" value="<?php echo escape($user['username']); ?>"> </li> <br/>
                 <li><label for="date">Date:</label> </li>
-                <li><input type="text" name="date" value="<?php echo escape($user['date']); ?>"> </li>
-                <li><input type="submit" name="submit" value="Update"> </li>
+                <li><input type="text" class="userInfo" name="date" value="<?php echo escape($user['date']); ?>"> </li> <br/>
+                <li><input type="submit" id="save-edit" name="submit" value="Save"> </li>
             </ul>
         </form>
         </div>
