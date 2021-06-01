@@ -1,14 +1,10 @@
 <?php
-session_start(); 
-require "config.php";
-$login_session = $_SESSION['logged_in'];
-$user_id = $_SESSION['user_id'];
+if (!isset($_SESSION)) {
+    session_start(); 
+}
 
-$connection= new PDO($dsn, $username, $password, $options);
-
-if(!isset($login_session))
+if(!isset($_SESSION['logged_in']))
 {
-echo "You failed !!";
- header('Location: index.php');
+ header('Location: login.php');
 }
 ?>
