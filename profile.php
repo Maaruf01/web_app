@@ -15,7 +15,7 @@
 <div id="profile-pic">
 <img src="img/face1.jpg" alt="Profile Pic" ></div>
 <div id="profile-info">
-<a href="#">Edit Profile</a>
+<a href="#" id="edit-profile">Edit Profile</a>
 <form action="#" method="post" id="profile-form" >
 <ul>
 <li><label for="fname">Firstname:</label></li>
@@ -32,7 +32,7 @@
 <li><input type="password" name="password" > </li>
 <li><label for="date">Date:</label> </li>
 <li><input type="date" name="date"> </li>
-<li><input type="submit" name="submit" value="Update"> </li>
+<li><input type="submit" name="submit" id="save-edit" value="Save"> </li>
 </ul>
 </form>
 </div>
