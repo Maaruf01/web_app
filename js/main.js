@@ -1,4 +1,9 @@
 $(function(){
-$(".cta, #login, #register").slideDown(3000);
+
+$(".cta, #login, #register").slideDown(1500);
+
+    $("#edit-profile").click(function(){
+    $("#save-edit").show();
+    });
 
 });
