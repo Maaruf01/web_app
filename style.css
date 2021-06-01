@@ -271,6 +271,7 @@ background-color: #a6a590;
 
 
 #profile-form label{
+  color: #988d89;
   font-size: 16px;
   margin: 5px 30px 5px 0px: 
 
@@ -302,6 +303,7 @@ input[type=number], input[type=password],
   }
  
 #profile-form input[type=submit]{
+  display: none;
   font-size: 16px;
   font-weight: bold; 
   background-color: #fff;
@@ -320,7 +322,7 @@ input[type=number], input[type=password],
 
 
 #profile-pic {
-  margin: 20px 500px 30px 500px;
+  margin: 20px 250px 30px 250px;
   border-radius: 20px;
   background-color: #fff;
   padding: 10px 0px;
@@ -335,7 +337,7 @@ input[type=number], input[type=password],
 }
 #profile-info{
  background-color: #fff;
- margin: 10px 500px 20px 500;
+ margin: 10px;
   border-radius: 20px;
  padding: 10px 0px 20px 50px;
 }
