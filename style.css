@@ -50,16 +50,17 @@ body{
     padding: 15px 0px 5px 0px;
     border: none;
     border-bottom: 1px solid green;
-   
+   background-color: #fff;
    
 }
 
 #login ul li input[type=password]{
-  width: 100%;
+    
+    width: 100%;
     padding: 15px 0px 5px 0px;
     border: none;
     border-bottom: 1px solid green;
-   
+    
 }
 
 /* button style @login & registration page*/
@@ -75,6 +76,7 @@ body{
 }
 .btn:hover {
 	background-color:#3a9d31;
+  cursor: pointer;
  	color: #fff;
 
 }
@@ -101,8 +103,8 @@ body{
   	font-size: 16px;
   	font-weight: bold;
 	  position: fixed;
-	 left:600px;
-
+	  left:600px;
+      padding: 20px 80px;
 }
   .fname, .lname, .email,
   .tel, .address, .username, .password, .image{
@@ -119,31 +121,32 @@ body{
   	text-align: center; 
 }
 
-  #register ul li input[type=text], input[type=email], input[type=password]{
-      width: 80%;
+  #register ul li input[type=text]{
+     font-size: 17;
+      width: 100%;
       padding: 15px 0px 5px 0px;
      border:none;
      border-bottom: 1px solid green;
   }
   #register ul li input[type=email]{
-  width: 80%;
+    font-size: 17;
+       width: 100%;
+      border:none;
+     border-bottom: 1px solid green;
   }
   #register ul li input[type=password]{
-  width: 80%;
+  width: 100%;
+  border:none;
+     border-bottom: 1px solid green;
   }
 .lbl-register{
   text-align: left;
 	padding-left: 90px;
 
 }
-#pic{
-	 padding:15px 0px 5px 80px;
-}
+
 /* main menu style */
 
-#nav-menu{
-
-}
 #nav-menu ul{
 	   background-color: #3a9d31;
      color::#fff;
@@ -281,26 +284,29 @@ background-color: #a6a590;
 
 }
 #profile-form ul li{
-  display: block;
+    display: inline;
+
     list-style-type: none;
 }
 #profile-form ul li input{
-    
+  
    padding: 5px 10px 15px 10px; 
   
 }
+
 #profile-form ul li label{
-  display: inline;
+  margin-right: 30px;
 }
 #profile-form input[type=text], input[type=email], 
 input[type=number], input[type=password],
  input[type=tel],input[type=date]{
-    width: 50%;
+    width: 40%;
    border:none;
-  border-bottom: 1px solid green;
+  border-bottom: 0px solid green;
   padding: 20px 0px 10px 0px;
- 
+  font-size: 18;
   }
+
  
 #profile-form input[type=submit]{
   display: none;
@@ -308,16 +314,17 @@ input[type=number], input[type=password],
   font-weight: bold; 
   background-color: #fff;
   color: #3a9d31;
-  border-radius: 10px 0;
+  border-radius: 10px 0px;
   border:#3a9d31 2px solid;
   padding: 10px 15px;
-  margin: 20px 0px 0px 150px;
+  margin: 20px 0px 0px 100px;
   
 
 }
 #profile-form input[type=submit]:hover{
      background-color: #3a9d31;
      color: #fff;
+     cursor: pointer;
   }
 
 
@@ -336,10 +343,10 @@ input[type=number], input[type=password],
   border-radius: 60px;
 }
 #profile-info{
- background-color: #fff;
- margin: 10px;
+  background-color: #fff;
+  margin: 20px 250px 30px 250px;
   border-radius: 20px;
- padding: 10px 0px 20px 50px;
+ padding: 10px 0px 0px 50px;
 }
 
 #profile-info a{ 
@@ -352,4 +359,6 @@ input[type=number], input[type=password],
     color: #fff;
     background-color: #3a9d31;
     padding: 3px 5px; 
+    cursor: pointer;
+
   }
