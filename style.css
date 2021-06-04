@@ -7,6 +7,79 @@ body{
 }
 
 
+/* home page style */
+.hero{
+      position: relative;  
+      background-image: url("img/home.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+     background-attachment: fixed;
+      min-height: 650px;
+      margin-top: -18px;
+      
+
+      }
+ 
+     .hero::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.65);
+    
+   }
+
+  .cta{
+    padding-top:100px;
+    font-size: 30px;
+   position: relative;
+   text-align: center;
+   color: #fff;
+ }
+  #welcome{
+   padding-bottom: 50px; 
+
+ }
+
+#btnlogin{
+  position: absolute;
+    background-color: #3a9d31;
+    border: #fff 2px solid;
+    padding: 20px 40px;
+    margin: -18px 80px 0px -150px;
+    border-radius: 10px 0;
+    color: #fff;
+    font-size: 18px;
+   text-decoration: none;
+  
+  }
+#btnlogin:hover{
+  cursor: pointer;
+  background-color:#ccacac;
+  border: #fff 2px solid;
+  color:#fff;
+}
+#btnregister{
+    
+    position: absolute;
+    background-color: #ccacac;
+    border: #fff 2px solid;
+    padding: 20px 30px;
+    margin: -95px 10px 10px 20px;
+    border-radius: 10px 0;
+    color: #fff;
+    font-size: 18px;
+   text-decoration: none;
+  
+  }
+#btnregister:hover{
+  cursor: pointer;
+  background-color:#3a9d31;
+  border: #fff 2px solid;
+  color:#fff;
+}
 #textlogo{
 	font-size: 35px;
 	color: #000;
@@ -20,7 +93,7 @@ body{
 	background-color: #e4e5e4;
 
 	}
-	/* style for login page */
+	/* style for login form */
   #login{
     position: relative;
   	background-color: #fff;
@@ -33,9 +106,7 @@ body{
   	top: 150px;
 }
 
-#login{
-  display: none;
-}
+
 #login ul{
 	padding: 50px 30px 50px 30px;
  		
@@ -61,7 +132,7 @@ body{
     border: none;
     border-bottom: 1px solid green;
     
-}
+} 
 
 /* button style @login & registration page*/
  .btn{
@@ -95,7 +166,6 @@ body{
 
 	/* style for register page */
   #register{
-    display: none;
     position: relative;
   	background-color: #fff;
     border:#3a9d31 2px solid;
@@ -178,81 +248,6 @@ border: #3a9d31 1px solid;
 
 }
 
-/* home page style */
-.hero{
-      position: relative;  
-      background-image: url("img/home.jpeg");
-      background-repeat: no-repeat;
-      background-size: cover;
-     background-attachment: fixed;
-      min-height: 650px;
-      margin-top: -18px;
-      
-
-      }
- 
-     .hero::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(0,0,0,0.65);
-    
-   }
-
-  .cta{
-    display: none;
-  	padding-top:100px;
-  	font-size: 30px;
-   position: relative;
-   text-align: center;
-   color: #fff;
- }
-  #welcome{
- 	 padding-bottom: 50px; 
-
- }
-
-#btnlogin{
-    
-    position: absolute;
-    background-color: #3a9d31;
-    border: #fff 2px solid;
-    padding: 20px 40px;
-    margin: -18px 80px 0px -150px;
-    border-radius: 10px 0;
-    color: #fff;
-    font-size: 18px;
-   text-decoration: none;
-  
-  }
-#btnlogin:hover{
-  cursor: pointer;
-  background-color:#ccacac;
-  border: #fff 2px solid;
-  color:#fff;
-}
-#btnregister{
-    
-    position: absolute;
-    background-color: #ccacac;
-    border: #fff 2px solid;
-    padding: 20px 30px;
-    margin: -95px 10px 10px 20px;
-    border-radius: 10px 0;
-    color: #fff;
-    font-size: 18px;
-   text-decoration: none;
-  
-  }
-#btnregister:hover{
-  cursor: pointer;
-  background-color:#3a9d31;
-  border: #fff 2px solid;
-  color:#fff;
-}
 /* Style of profile page*/
  
 footer{
