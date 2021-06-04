@@ -18,17 +18,18 @@ if (!isset($_SESSION)) {
 		<ul>
 			<li> Enter Login Details</li>
 			<li><input type="text" name="username" placeholder="User Name" class="details"></li>
-			<li><input type="password" name="password" placeholder="Password" class="details"></li>			
-			<li><input type="submit" name="submit" value="Login" class="btn"></li>
+			<li><input type="password" name="password" placeholder="Password" class="details"></li>
+						
+			<li><input type="submit" id="button" name="submit" value="Login"   class="btn"></li>
 		</ul>
 		<p class="msg"> Not registered?<a href="register.php"> Register Now</a></p>
 		<p class="msg"><a href="index.php"> <-- Back to home</a></p>
 	</form>
 </div>
 
-<script src="js/jquery-3.6.0.js"></script>
-<script src="js/main.js"></script>
-
 <?php
 include 'include/footer.php';
 ?>
+
+<script src="js/jquery-3.6.0.js"></script>
+<script src="js/main.js"></script>
