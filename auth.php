@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 require "config.php";
 require "common.php";
 
-if (isset($_POST['submit'])) {
+//if (isset($_POST['submit'])) {
 	if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
 
    try {
@@ -26,16 +26,22 @@ if (isset($_POST['submit'])) {
 		$result = $statement->fetch(PDO::FETCH_ASSOC);
 
 		if (is_array($result)) {
+			
 			if (password_verify($passw, $result['password'])) {
 				$logged_in = TRUE;
 				$_SESSION['user_id'] = $result['id'];
 				$_SESSION['logged_in'] = $logged_in;
-				header("Location: profile.php");
-			}
-		} else {
-            echo "Invalid Details.";
+				echo 1;
+				
 		}
+		}
+		
+			else {
+				echo 2;
+			}
+		
+		
 	} catch (PDOException $error ) {
 		echo $sql . "<br>" . $error->getMessage();
 	}
-}
+//}
