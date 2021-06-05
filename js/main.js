@@ -59,6 +59,31 @@ $(function(){
         });
 
     });
-
     
-});
+    
+    $('#register').submit(function(event){
+        event.preventDefault()      
+        $('#sign-up').val('Please wait...') 
+
+        $.ajax({
+            url:'add_user.php',
+            method:'POST',
+            data:$(this).serialize(),
+            error:err=>{
+                console.log(err)
+                alert('An error occured') 
+                $('#sign-up').val('Sign-up')
+            },
+            success:function(resp){
+                if (resp){
+                    alert(resp + " successfully registered.")
+                    document.location.href= 'login.php'
+                }
+                else{
+                    alert("Not registered")
+                    $('#sign-up').val('Sign-up')
+                }
+            }
+        });
+
+    });

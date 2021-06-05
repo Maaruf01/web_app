@@ -191,23 +191,17 @@ body{
   	text-align: center; 
 }
 
-  #register ul li input[type=text]{
+  #register ul li input[type=text], input[type=email]{
      font-size: 17;
       width: 100%;
       padding: 15px 0px 5px 0px;
      border:none;
-     border-bottom: 1px solid green;
+     border-bottom: 1px solid #008000;
   }
-  #register ul li input[type=email]{
-    font-size: 17;
-       width: 100%;
-      border:none;
-     border-bottom: 1px solid green;
-  }
-  #register ul li input[type=password]{
+   #register ul li input[type=password]{
   width: 100%;
   border:none;
-     border-bottom: 1px solid green;
+  border-bottom: 1px solid #008000;
   }
 .lbl-register{
   text-align: left;
@@ -219,7 +213,7 @@ body{
 
 #nav-menu ul{
 	   background-color: #3a9d31;
-     color::#fff;
+     color: #fff;
      padding-left: 0px;  
 	
 }
@@ -262,8 +256,8 @@ footer{
 
 .container-fluid{
 background-color: #a6a590;
-   padding: 80px 0;
-   margin-bottom: 30px:
+padding: 80px 0px;
+margin-bottom: 30px;
    
 }
 
@@ -271,7 +265,7 @@ background-color: #a6a590;
 #profile-form label{
   color: #988d89;
   font-size: 16px;
-  margin: 5px 30px 5px 0px: 
+  margin: 5px 30px 5px 0px;
 
 }
 #profile-form ul{
