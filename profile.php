@@ -2,7 +2,6 @@
 <?php 
 // chech if user is logged in
 require 'session.php';
-
 require 'common.php';
 require "config.php";
 
