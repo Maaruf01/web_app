@@ -10,7 +10,6 @@ $(function(){
    
     });
 
-
     $('#login').submit(function(event){
         event.preventDefault()      
         $('#button').val('Please wait...') 
@@ -34,7 +33,32 @@ $(function(){
                 }
             }
         });
+        
+    });
+    
+    $('#register').submit(function(event){
+        event.preventDefault()      
+        $('#submit').val('Please wait...') 
+        
+        $.ajax({
+            url:'./add_user.php',
+            method:'POST',
+            data:$(this).serialize(),
+            error:err=>{
+                console.log(err)
+                alert('An error occured') 
+                $('#submit').val('Sign-up')
+            },
+            success:function(resp){
+                if (resp == 1){
+                    alert("Account created succesfully.")
+                    $('#register')[0].reset()
+                    $('#submit').val('Sign-up')
+                }
+            }
+        });
 
     });
 
+    
 });
