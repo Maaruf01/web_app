@@ -21,7 +21,6 @@ if (isset($_POST['submit'])) {
 			'email' => $_POST['email'], 
 			'phone' => $_POST['tel'], 
 			'address' => $_POST['address'],
-			'picture' => $_POST['image'],
 			'username' => $_POST['username'],
 			'password' => $hashed_passw,
 			'date' => $date,
