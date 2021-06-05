@@ -39,7 +39,8 @@ require "common.php";
 		$statement = $connection->prepare($sql);
 		$statement->execute($new_user);
 		
-
+		if ($statement){
+			
 		$sql = "SELECT firstname FROM users WHERE username = :username;";
 		
         $statement = $connection->prepare($sql);
@@ -51,7 +52,6 @@ require "common.php";
 		
 		
 			echo $firstn;
-
 			
 		}
 		else{
@@ -60,5 +60,5 @@ require "common.php";
 		}
 	} catch (PDOExeption $error) {
 		echo $sql . "</br>" . $error->getMesage();
-		
-//}
+		}
+		?>
