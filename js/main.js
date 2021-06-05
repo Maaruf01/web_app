@@ -10,6 +10,7 @@ $(function(){
    
     });
 
+
     $('#login').submit(function(event){
         event.preventDefault()      
         $('#button').val('Please wait...') 
@@ -33,9 +34,10 @@ $(function(){
                 }
             }
         });
-        
+
     });
     
+  // script for handling new user registation 
     $('#register').submit(function(event){
         event.preventDefault()      
         $('#sign-up').val('Please wait...') 
@@ -62,3 +64,4 @@ $(function(){
         });
 
     });
+});
