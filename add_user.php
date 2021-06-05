@@ -1,10 +1,13 @@
 <?php
+if (!isset($_SESSION)) {
+	session_start();
+}
 
 require "config.php";
 require "common.php";
 
-if (isset($_POST['submit'])) {
-	//if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
+//if (isset($_POST['submit'])) {
+	if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
 
 	try {
 		$connection = new pdo($dsn, $username, $password, $options);
@@ -36,7 +39,8 @@ if (isset($_POST['submit'])) {
 		$statement = $connection->prepare($sql);
 		$statement->execute($new_user);
 		
+		echo 1;
 	} catch (PDOExeption $error) {
 		echo $sql . "</br>" . $error->getMesage();
 	}
-}
+//}
