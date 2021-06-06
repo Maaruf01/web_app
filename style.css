@@ -191,7 +191,7 @@ body{
   	text-align: center; 
 }
 
-  #register ul li input[type=text], input[type=email]{
+  #register ul li input[type=text],input[type=email]{
      font-size: 17;
       width: 100%;
       padding: 15px 0px 5px 0px;
@@ -310,12 +310,12 @@ input[type=number], input[type=password],
   
 
 }
+
 #profile-form input[type=submit]:hover{
      background-color: #3a9d31;
      color: #fff;
      cursor: pointer;
   }
-
 
 #profile-pic {
   margin: 20px 250px 30px 250px;
@@ -331,6 +331,7 @@ input[type=number], input[type=password],
   margin-left:190px;
   border-radius: 60px;
 }
+
 #profile-info{
   background-color: #fff;
   margin: 20px 250px 30px 250px;
