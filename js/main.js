@@ -64,4 +64,34 @@ $(function(){
         });
 
     });
+
+    // handles editing user information 
+    $('#profile-form').submit(function(event){
+        event.preventDefault()      
+        $('#save-edit').val('Please wait...') 
+
+        $.ajax({
+            url:'edit_user.php',
+            method:'POST',
+            data:$(this).serialize(),
+            error:err=>{
+                console.log(err)
+                alert('An error occured') 
+                $('#save-edit').val('Save')
+            },
+            success:function(resp){
+                if (resp){
+                    alert('Information updated successfully.')
+                    $('#save-edit').val('Save')
+                    $("#save-edit").hide();
+                    $(".userInfo").attr('readonly', true);
+                }
+                else{
+                    alert('Update failed.')
+                    $('#save-edit').val('Save')
+                }
+            }
+        });
+
+    });
 });
