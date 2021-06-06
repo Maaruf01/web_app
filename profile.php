@@ -41,6 +41,9 @@ include 'include/head.php';
     <div class="container-fluid">
         <div id="profile-pic">
             <img src="#" alt="Profile Pic" >
+            <form action="#" method="POST" id="form-pic">
+                <input type="file" name="picture" >
+            </form>
         </div>
         <div id="profile-info">
             <a  id="edit-profile">Edit Profile</a>
@@ -56,7 +59,7 @@ include 'include/head.php';
                     <li><label for="email"> Email:</label> </li>
                     <li><input type="email" class="userInfo" name="email" value="<?php echo escape($user['email']); ?>"> </li> <br/>
                     <li><label for="address"> Address:</label> </li>
-                    <li><input type="address" class="userInfo" name="address" value="<?php echo escape($user['address']); ?>"> </li> <br/>
+                    <li><input type="text" class="userInfo" name="address" value="<?php echo escape($user['address']); ?>"> </li> <br/>
                     <li><label for="username" >Username:</label> </li>
                     <li><input type="text" class="userInfo" name="username" value="<?php echo escape($user['username']); ?>"> </li> <br/>
                     <li><label for="date">Date:</label> </li>
@@ -64,6 +67,7 @@ include 'include/head.php';
                     <li><input type="submit" id="save-edit" name="submit" value="Save"> </li>
                 </ul>
             </form>
+           
         </div>
     </div>
 
