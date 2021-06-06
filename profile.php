@@ -5,11 +5,33 @@ require 'session.php';
 require 'common.php';
 require "config.php";
 
-$connection= new PDO($dsn, $username, $password, $options);
+$connection = new PDO($dsn, $username, $password, $options);
+
+if (isset( $_POST['upload'])) {
+    if (isset($_SESSION['user_id'])) {
+        try {
+            $connection = new pdo($dsn, $username, $password, $options);
+            
+            $id =  $_SESSION['user_id'];
+            $picture =  $_POST['picture'];
+      
+            $sql = "UPDATE users SET picture = :picture WHERE id = :id";
+            $statement = $connection->prepare($sql);
+            $statement->bindValue(':picture', $picture);
+            $statement->bindValue(':id', $id);
+            $statement->execute();
+      
+        } catch (PDOException $error) {
+            echo $sql . "<br>" . $error->getMessage;
+        }
+    } else {
+        echo "Something went wrong!";
+        exit;
+    }
+}
 
 if (isset( $_SESSION['user_id'])) {
     try {
-        $connection = new pdo($dsn, $username, $password, $options);
         $id =  $_SESSION['user_id'];
   
         $sql = "SELECT * FROM users WHERE id = :id";
@@ -25,7 +47,6 @@ if (isset( $_SESSION['user_id'])) {
     echo "Something went wrong!";
     exit;
 }
-  
 
 include 'include/head.php'; 
 ?>
@@ -40,9 +61,13 @@ include 'include/head.php';
 
     <div class="container-fluid">
         <div id="profile-pic">
-            <img src="#" alt="Profile Pic" >
-            <form action="#" method="POST" id="form-pic">
-                <input type="file" name="picture" >
+            <img src="<?php echo escape($user['picture']); ?>" alt="Profile Pic" >
+            <form method="POST" id="form-pic">
+                <ul>
+                    <li><label for="picture">Picture:</label></li>
+                    <li><input type="file" name="picture" ></li>
+                    <li><input type="submit" id="upload" name="upload" class="btn" value="Upload"></li>
+                </ul>
             </form>
         </div>
         <div id="profile-info">
