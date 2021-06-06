@@ -18,7 +18,7 @@ if (!isset($_SESSION)) {
 			<li> Enter Details</li>
 				<li><input type="text" name="fname" placeholder="First Name" class="fname"></li>
 				<li><input type="text" name="lname" placeholder="Last Name" class="lname"></li>
-				<li><input type="email" name="email" placeholder="example@gmail.com" class="email"></li>
+				<li><input type="text" name="email" placeholder="example@gmail.com" class="email"></li>
 				<li><input type="text" name="tel" placeholder="08035069008" class="tel"></li>
 				<li><input type="text" name="address" placeholder="Address" class="address"></li>
 				<li><input type="text" name="username" placeholder="User Name" class="username"></li>
