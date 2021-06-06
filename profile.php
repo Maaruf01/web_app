@@ -45,6 +45,7 @@ include 'include/head.php';
         <div id="profile-info">
             <a  id="edit-profile">Edit Profile</a>
             <form action="#" method="post" id="profile-form" >
+            <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
                 <ul>
                     <li><label for="fname">Firstname:</label></li>
                     <li><input type="text" class="userInfo" name="fname" value="<?php echo escape($user['firstname']); ?>"></li> <br/>
