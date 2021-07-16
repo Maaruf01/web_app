@@ -1,7 +1,8 @@
 <?php include 'include/head.php'; ?>
- <title>Web Application</title>
+ <title>Home - Blog</title>
  <script src="js/jquery-3.6.0.js"></script>
 <script src="js/main.js"></script>
+<?php include 'include/bootstrap.php'; ?>
 </head>
 
 <body>
@@ -9,7 +10,26 @@
 
 <?php $_GET['currentPage'] = 'index';
  include 'include/menu.php'?>
+<div>
 
+<form action="add_comment.php" method="POST">
+<div class="form-group">
+<label for="name">Name:</label> <br>
+<input type="text" name="name" placehoder="name">
+</div>
+<div class="form-group">
+<label for="comment">Comment:</label><br>
+<textarea name="comment" id="" cols="30" rows="10"> 
+
+</textarea> <br>
+</div>
+<input type="submit" class="comment" name="submit" value="Submit"> 
+</form>
+</body>
+</div>
+
+
+<!--
     <section class="hero">
 
     <div class="cta">
@@ -19,5 +39,5 @@
     <a href="register.php" id="btnregister">Register</a>
     </div>
     </section>
-
+ -->
 <?php include 'include/footer.php'; ?>
