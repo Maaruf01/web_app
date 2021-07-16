@@ -82,7 +82,7 @@ $(function(){
             success:function(resp){
                 if (resp){
                     alert('Information updated successfully.')
-                    $('#save-edit').val('Save')
+                   $('#save-edit').val('Save')
                     $("#save-edit").hide();
                     $(".userInfo").attr('readonly', true);
                 }
