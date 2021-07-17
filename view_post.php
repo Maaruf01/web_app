@@ -7,11 +7,11 @@ require 'common.php';
 require "config.php";
 
 if (isset($_GET['post_id'])) {
+	$post_id = $_GET['post_id'];
+	
 	try {
 		$connection = new PDO($dsn, $username, $password, $options);
 	
-		$post_id = $_GET['post_id'];
-		
 		$sql = "SELECT posts.title, posts.content, posts.`time`, users.firstname FROM web_app_db.posts INNER JOIN web_app_db.users ON posts.user_id = users.id WHERE posts.id = :id;";
 		$statement = $connection->prepare($sql);
 		$statement->bindParam(':id', $post_id, PDO::PARAM_STR);
@@ -22,6 +22,18 @@ if (isset($_GET['post_id'])) {
 		echo $sql . "<br>" . $error->getMessage;
 	}
 	
+	try {
+		$connection = new PDO($dsn, $username, $password, $options);
+	
+		$sql = "SELECT name, comment, `time` FROM comments WHERE post_id = :post_id";
+		$statement = $connection->prepare($sql);
+		$statement->bindValue(':post_id', $post_id);
+		$statement->execute();
+	
+		$comments = $statement->fetch(PDO::FETCH_ASSOC);
+	} catch (PDOException $error) {
+		echo $sql . "<br>" . $error->getMessage;
+	}
 }
 
 ?>
