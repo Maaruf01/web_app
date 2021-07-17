@@ -22,7 +22,7 @@ if (!isset($_SESSION)) {
     </div>
 <div class="form-group">
 <label for="post">Write Post Here:</label><br>
-        <textarea name="post" id="contents" cols="100" rows="16" placeholder="Enter text here..."></textarea>
+        <textarea name="post" id="contents" cols="100" rows="16" placeholder="Enter text here..."></textarea> <br> <br>
         </div>
         <input type="submit" class="btn" name="submit" value="Publish">
     </form>
