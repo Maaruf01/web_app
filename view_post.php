@@ -53,7 +53,7 @@ if (isset($_GET['post_id'])) {
 		$statement->bindValue(':post_id', $post_id);
 		$statement->execute();
 	
-		$comments = $statement->fetch(PDO::FETCH_ASSOC);
+		//$comments = $statement->fetch(PDO::FETCH_ASSOC);
 	} catch (PDOException $error) {
 		echo $sql . "<br>" . $error->getMessage;
 	}
@@ -67,22 +67,39 @@ if (isset($_GET['post_id'])) {
 </head>
 <body>
 <header><h1>WEB APPLICATION</h1></header>
+<hr> <!--display post in full -->
+        <h3><?php echo $post['title']; ?></h3>
+        <p><?php echo $post['content']; ?></p>
+        <?php echo $post['firstname']; ?>
+        <?php echo $post['time']; ?>
+    
+<!-- display users comments on a post-->
+     <?php while($comments = $statement->fetch(PDO::FETCH_ASSOC)){ ?>
+    
+        <h6><?php echo $comments['name']; ?> <?php echo $comments['time']; ?></h6>
+        <p><?php echo $comments['comment']; ?></p>
+        <?php
+       } ?>
 
-<div>
-
-</div>
-<div>
 <form action="" method="POST">
 <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
-<div class="form-group">
+
+<div class="form-group"><br>
+    LEAVE A COMMENT <br>
 <label for="name">Name:</label> <br>
 <input type="text" name="name" placehoder="name">
 </div>
 <div class="form-group">
 <label for="comment">Comment:</label><br>
-<textarea name="comment" id="" cols="30" rows="10"> 
+<textarea name="comment" id="" cols="30" rows="4"> 
 
 </textarea> <br>
+
 </div>
-<input type="submit" class="comment" name="submit" value="Submit"> 
-</form>
+<input type="submit" class="btn" name="submit" value="Submit"> 
+</form> <br>
+<hr>
+<a href="index.php">Back to Home</a>
+
+</body>
+<?php include 'include/footer.php'; ?>
