@@ -9,6 +9,29 @@ require "config.php";
 if (isset($_GET['post_id'])) {
 	$post_id = $_GET['post_id'];
 	
+	if (isset($_POST['submit'])) {
+		if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
+	
+		try {
+			$connection = new pdo($dsn, $username, $password, $options);
+			
+			$date = date('Y-m-d H:i:s');
+			$comment = $_POST['comment'];
+			$name = $_POST['name'];
+			
+			$sql = "INSERT INTO comment (name, comment, `time`, post_id) VALUES(:name, :comment, :time :post_id);";
+			
+			$statement = $connection->prepare($sql);
+			$statement->bindParam(':name', $name, PDO::PARAM_STR);
+			$statement->bindParam(':comment', $comment, PDO::PARAM_STR);
+			$statement->bindParam(':time', $date, PDO::PARAM_STR);
+			$statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+			$statement->execute();
+		} catch (PDOExeption $error) {
+			echo $sql . "</br>" . $error->getMesage();
+		}
+	}
+
 	try {
 		$connection = new PDO($dsn, $username, $password, $options);
 	
