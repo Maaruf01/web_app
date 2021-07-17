@@ -2,8 +2,29 @@
 if (!isset($_SESSION)) {
 	session_start();
 }
+
+require 'common.php'; 
+require "config.php";
+
+if (isset($_GET['post_id'])) {
+	try {
+		$connection = new PDO($dsn, $username, $password, $options);
+	
+		$post_id = $_GET['post_id'];
+		
+		$sql = "SELECT posts.title, posts.content, posts.`time`, users.firstname FROM web_app_db.posts INNER JOIN web_app_db.users ON posts.user_id = users.id WHERE posts.id = :id;";
+		$statement = $connection->prepare($sql);
+		$statement->bindParam(':id', $post_id, PDO::PARAM_STR);
+		$statement->execute();
+	
+		$post = $statement->fetch(PDO::FETCH_ASSOC);
+	} catch (PDOException $error) {
+		echo $sql . "<br>" . $error->getMessage;
+	}
+	
+}
+
 ?>
-<?php require 'common.php'; ?>
 
 <?php require 'include/head.php'; ?>
 <?php include 'include/bootstrap.php'; ?>
@@ -14,6 +35,8 @@ if (!isset($_SESSION)) {
 
 <div>
 
+</div>
+<div>
 <form action="add_comment.php" method="POST">
 <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
 <div class="form-group">
