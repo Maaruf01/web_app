@@ -1,3 +1,20 @@
+<?php 
+require "config.php";
+
+try {
+   $connection = new PDO($dsn, $username, $password, $options);
+
+   $sql = "SELECT title, content, `time`, user_id FROM posts";
+   $statement = $connection->prepare($sql);
+   $statement->execute();
+
+   $posts = $statement->fetch(PDO::FETCH_ASSOC);
+} catch (PDOException $error) {
+   echo $sql . "<br>" . $error->getMessage;
+}
+
+?>
+
 <?php include 'include/head.php'; ?>
  <title>Home - Blog</title>
  <script src="js/jquery-3.6.0.js"></script>
