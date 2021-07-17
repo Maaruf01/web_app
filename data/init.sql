@@ -16,7 +16,7 @@ CREATE TABLE `web_app_db`.`users` (
   PRIMARY KEY (`id`));
 
 CREATE TABLE `web_app_db`.`posts` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `title` TINYTEXT NOT NULL,
   `content` MEDIUMTEXT NOT NULL,
   `time` TIMESTAMP NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE `web_app_db`.`posts` (
     ON UPDATE NO ACTION);
 
 CREATE TABLE `web_app_db`.`comment` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `comment` TINYTEXT NOT NULL,
   `time` TIMESTAMP NOT NULL,
