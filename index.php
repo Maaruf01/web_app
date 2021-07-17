@@ -3,19 +3,18 @@ require "config.php";
 
 try {
    $connection = new PDO($dsn, $username, $password, $options);
-
-   $sql = "SELECT title, content, `time`, user_id FROM posts";
+  $sql = "SELECT posts.id, posts.title, posts.content, posts.`time`, users.firstname FROM web_app_db.posts INNER JOIN web_app_db.users ON posts.user_id = users.id";
    $statement = $connection->prepare($sql);
    $statement->execute();
+  // $posts = $statement->fetch(PDO::FETCH_ASSOC);
 
-   $posts = $statement->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $error) {
    echo $sql . "<br>" . $error->getMessage;
 }
 
 ?>
 
-<?php include 'include/head.php'; ?>
+<?php require 'include/head.php'; ?>
  <title>Home - Blog</title>
  <script src="js/jquery-3.6.0.js"></script>
 <script src="js/main.js"></script>
@@ -26,25 +25,18 @@ try {
 <header><a href="index.php" id="textlogo">WEB APPLICATION</a> </header>
 
 <?php $_GET['currentPage'] = 'index';
- include 'include/menu.php';
+ include 'include/menu.php'; 
 
-  function readMore(){ ?> 
-  <a href="view_post.php" id="readmore">Read More</a> <?php
-   }?>
-   <?php readMore(); ?>
+ // display all posts in home page
+ while($posts = $statement->fetch(PDO::FETCH_ASSOC)){ ?>
+ <div class="container-fluid">
+      <h6><?php echo $posts['firstname']; ?> <?php echo $posts['time']; ?> </h6>
+      <h4><?php echo $posts['title']; ?></h4>
+      <p id="meta-description"><?php echo $posts['content']; ?> ... </p>    
+      <a href="view_post.php?post_id=<?php echo $posts['id']; ?>" id="readmore">Read More</a> </div>
+ <hr>
+<?php
+ } ?> 
+ 
 </body>
-</div>
-
-
-<!--
-    <section class="hero">
-  
-    <div class="cta">
-    <h1 id="welcome"> Welcome to our site </h1>
-    <a href="login.php" id="btnlogin"> Login</a>
-    <h6>OR</h6>
-    <a href="register.php" id="btnregister">Register</a>
-    </div>
-    </section>
- -->
 <?php include 'include/footer.php'; ?>
