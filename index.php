@@ -9,29 +9,19 @@
 <header><a href="index.php" id="textlogo">WEB APPLICATION</a> </header>
 
 <?php $_GET['currentPage'] = 'index';
- include 'include/menu.php'?>
-<div>
+ include 'include/menu.php';
 
-<form action="add_comment.php" method="POST">
-<div class="form-group">
-<label for="name">Name:</label> <br>
-<input type="text" name="name" placehoder="name">
-</div>
-<div class="form-group">
-<label for="comment">Comment:</label><br>
-<textarea name="comment" id="" cols="30" rows="10"> 
-
-</textarea> <br>
-</div>
-<input type="submit" class="comment" name="submit" value="Submit"> 
-</form>
+  function readMore(){ ?> 
+  <a href="view_post.php" id="readmore">Read More</a> <?php
+   }?>
+   <?php readMore(); ?>
 </body>
 </div>
 
 
 <!--
     <section class="hero">
-
+  
     <div class="cta">
     <h1 id="welcome"> Welcome to our site </h1>
     <a href="login.php" id="btnlogin"> Login</a>
