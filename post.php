@@ -14,7 +14,7 @@ if (!isset($_SESSION)) {
 <?php $_GET['currentPage'] = 'post'; 
     include 'include/admin_menu.php'?>
     <div class="container">
-    <form action="publish_post" method="POST">
+    <form action="publish_post.php" method="POST">
     <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
     <div class="form-group">
   <label for="title">Enter Title:</label><br>
