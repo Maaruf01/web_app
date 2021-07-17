@@ -48,7 +48,7 @@ if (isset($_GET['post_id'])) {
 	try {
 		$connection = new PDO($dsn, $username, $password, $options);
 	
-		$sql = "SELECT name, comment, `time` FROM comments WHERE post_id = :post_id";
+		$sql = "SELECT name, comment, `time` FROM comment WHERE post_id = :post_id";
 		$statement = $connection->prepare($sql);
 		$statement->bindValue(':post_id', $post_id);
 		$statement->execute();
