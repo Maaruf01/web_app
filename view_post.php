@@ -49,7 +49,7 @@ if (isset($_GET['post_id'])) {
 
 </div>
 <div>
-<form action="add_comment.php" method="POST">
+<form action="" method="POST">
 <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
 <div class="form-group">
 <label for="name">Name:</label> <br>
