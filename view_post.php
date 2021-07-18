@@ -19,7 +19,7 @@ if (isset($_GET['post_id'])) {
 			$comment = $_POST['comment'];
 			$name = $_POST['name'];
 			
-			$sql = "INSERT INTO comment (name, comment, `time`, post_id) VALUES(:name, :comment, :time :post_id);";
+			$sql = "INSERT INTO `web_app_db`.`comment` (`name`, `comment`, `time`, `post_id`) VALUES (:name, :comment, :time, :post_id);			";
 			
 			$statement = $connection->prepare($sql);
 			$statement->bindParam(':name', $name, PDO::PARAM_STR);
