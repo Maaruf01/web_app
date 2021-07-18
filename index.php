@@ -37,6 +37,6 @@ try {
  <hr>
 <?php
  } ?> 
- 
+ <br> <br> <br> 
 </body>
 <?php include 'include/footer.php'; ?>
