@@ -71,11 +71,11 @@ if (isset($_GET['post_id'])) {
         <h3><?php echo $post['title']; ?></h3>
         <p><?php echo $post['content']; ?></p>
         <?php echo $post['firstname']; ?>
-        <?php echo $post['time']; ?>
-    
+        <?php echo $post['time']; ?> <hr> <br>
+        
 <!-- display users comments on a post-->
      <?php while($comments = $statement->fetch(PDO::FETCH_ASSOC)){ ?>
-    
+   
         <h6><?php echo $comments['name']; ?> <?php echo $comments['time']; ?></h6>
         <p><?php echo $comments['comment']; ?></p>
         <?php
@@ -100,6 +100,6 @@ if (isset($_GET['post_id'])) {
 </form> <br>
 <hr>
 <a href="index.php">Back to Home</a>
-
+       <br> <br> <br> <br> <br>
 </body>
 <?php include 'include/footer.php'; ?>
