@@ -15,7 +15,7 @@ try {
 ?>
 
 <?php require 'include/head.php'; ?>
- <title>Home - Blog</title>
+ <title>Home</title>
  <script src="js/jquery-3.6.0.js"></script>
 <script src="js/main.js"></script>
 <?php include 'include/bootstrap.php'; ?>
